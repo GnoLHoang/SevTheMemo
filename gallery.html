@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery - Kỷ Yếu Lớp</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
         .gallery-header {
@@ -26,7 +29,7 @@
             cursor: pointer;
             padding: 10px;
             background: #fff;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transform: rotate(calc(-3deg + 6deg * var(--rand, 0.5)));
             transition: all 0.3s ease;
         }
@@ -56,22 +59,29 @@
             display: none;
             position: fixed;
             z-index: 999;
-            left: 0; top: 0; width: 100%; height: 100%;
-            background-color: rgba(0,0,0,0.9);
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
         }
+
         .lightbox img {
             margin: auto;
             display: block;
             max-width: 90%;
             max-height: 90%;
             position: absolute;
-            top: 50%; left: 50%;
+            top: 50%;
+            left: 50%;
             transform: translate(-50%, -50%);
             border: 10px solid #fff;
         }
+
         .lightbox-close {
             position: absolute;
-            top: 20px; right: 40px;
+            top: 20px;
+            right: 40px;
             color: #f1f1f1;
             font-size: 40px;
             font-weight: bold;
@@ -79,6 +89,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="page-wrapper animate-fade-in">
         <main style="flex: 1; padding: 2rem 0;">
@@ -87,7 +98,8 @@
                     <h1 style="font-size: 3rem; margin-bottom:0;">Thư Viện Ảnh</h1>
                     <p style="font-style: italic; opacity: 0.8;">Lưu giữ những khoảnh khắc đẹp nhất.</p>
                 </div>
-                <button class="btn" onclick="alert('Tính năng tải ảnh lên đang được phát triển!')">📸 Tải Ảnh Lên</button>
+                <button class="btn" onclick="alert('Tính năng tải ảnh lên đang được phát triển!')">📸 Tải Ảnh
+                    Lên</button>
             </div>
 
             <div class="gallery-grid" id="galleryGrid">
@@ -105,34 +117,49 @@
     <script src="script.js"></script>
     <script>
         const photos = [
-            { id: 1, src: "assets/hero.png", caption: "Bức ảnh kỷ yếu đầu tiên" },
-            { id: 2, src: "assets/gallery_mock.png", caption: "Khoảnh khắc đáng nhớ" },
-            { id: 3, src: "assets/hero.png", caption: "Tập thể" },
-            { id: 4, src: "assets/gallery_mock.png", caption: "Chụp lén giờ ra chơi" },
-            { id: 5, src: "assets/hero.png", caption: "Prom cuối cấp" },
-            { id: 6, src: "assets/gallery_mock.png", caption: "Lễ bế giảng" },
+            { id: 1, src: "assets/1.jpg", caption: "" },
+            { id: 2, src: "assets/2.jpg", caption: "" },
+            { id: 3, src: "assets/3.jpg", caption: "" },
+            { id: 4, src: "assets/4.jpg", caption: "" },
+            { id: 5, src: "assets/5.jpg", caption: "" },
+            { id: 7, src: "assets/7.jpg", caption: "" },
+            { id: 8, src: "assets/8.jpg", caption: "" },
+            { id: 9, src: "assets/9.jpg", caption: "" },
+            { id: 10, src: "assets/10.jpg", caption: "" },
+            { id: 11, src: "assets/11.jpg", caption: "" },
+            { id: 12, src: "assets/12.jpg", caption: "" },
+            { id: 13, src: "assets/13.jpg", caption: "" },
+            { id: 14, src: "assets/14.jpg", caption: "" },
+            { id: 15, src: "assets/15.jpg", caption: "" },
+            { id: 16, src: "assets/16.jpg", caption: "" },
+            { id: 17, src: "assets/17.jpg", caption: "" },
+            { id: 18, src: "assets/18.jpg", caption: "" },
+            { id: 19, src: "assets/19.jpg", caption: "" },
+            { id: 20, src: "assets/20.jpg", caption: "" },
+            { id: 21, src: "assets/21.jpg", caption: "" },
         ];
 
         const grid = document.getElementById('galleryGrid');
-        
+
         photos.forEach(p => {
             const item = document.createElement('div');
             item.className = 'gallery-item';
             // Set random rotation to simulate dropped polaroids
             item.style.setProperty('--rand', Math.random());
-            
+
             item.innerHTML = `
                 <img src="${p.src}" alt="${p.caption}">
                 <p>"${p.caption}"</p>
             `;
-            
+
             item.onclick = () => {
                 document.getElementById('lightbox').style.display = 'block';
                 document.getElementById('lightbox-img').src = p.src;
             };
-            
+
             grid.appendChild(item);
         });
     </script>
 </body>
+
 </html>

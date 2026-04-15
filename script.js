@@ -1,21 +1,21 @@
 // Mock Data - Dữ liệu dùng chung
 const CLASS_INFO = {
-    name: "Lớp 12A1",
-    school: "THPT Chuyên Lê Hồng Phong",
-    year: "Niên khóa 2021 - 2024",
-    slogan: "Nơi lưu giữ từng khoảnh khắc thanh xuân",
+    name: "Lớp 12A7",
+    school: "THPT Cao Bá Quát - Gia Lâm",
+    year: "Niên khóa 2023 - 2026",
+    slogan: "A7 vui hết sẩy",
     stats: {
-        members: 42,
-        photos: 156,
-        messages: 89
+        members: 46,
+        photos: 1000,
+        messages: "updating"
     }
 };
 
 const RANDOM_MEMORIES = [
-    { image: "assets/gallery_mock.png", caption: "Giờ học Hóa cuối cùng của đời học sinh..." },
-    { image: "assets/gallery_mock.png", caption: "Cả lớp trốn ngủ trưa hát ca vang trời." },
-    { image: "assets/gallery_mock.png", caption: "Giây phút bế giảng đầy nước mắt." },
-    { image: "assets/gallery_mock.png", caption: "Picnic dã ngoại - Cùng nhau nướng thịt cháy khét lẹt." }
+    { image: "assets/kiniem1.jpg", caption: "Dù rằng tương lai mỗi người một ngả" },
+    { image: "assets/kiniem2.jpg", caption: "Mãi không quên tiếng chuông cuối giờ của ngày hôm ấy" },
+    { image: "assets/kiniem3.jpg", caption: "Một phần kí ức thanh xuân của ta" },
+    { image: "assets/kiniem4.jpg", caption: "Cảm ơn chúng ta vì đã có nhau trong từng khoảnh khắc" }
 ];
 
 // Xác thực (Fake Auth)
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!window.location.pathname.includes('login.html')) {
         renderLayout();
     }
-    
+
     // Nếu ở trang chủ thì render memory pattern
     if (document.getElementById('random-memory-container')) {
         renderRandomMemory();
